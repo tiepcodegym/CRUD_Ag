@@ -1,0 +1,20 @@
+<button routerLink="add">Add New</button>
+<table border="1px">
+  <tr>
+    <td>STT</td>
+    <td>Title</td>
+    <td>Code</td>
+    <td>Author</td>
+    <td colspan="3">Action</td>
+  </tr>
+  <tr *ngFor="let user of users; let i = index">
+    <td>{{user.id}}</td>
+    <td>{{user.title}}</td>
+    <td>{{user.code}}</td>
+    <td>{{user.author}}</td>
+    <td><button routerLink="{{user.id}}/update">Update</button></td>
+    <td><button routerLink="{{user.id}}/detail">Detail</button></td>
+    <td><button (click)="delete(user.id)">Delete</button></td>
+  </tr>
+
+</table>
